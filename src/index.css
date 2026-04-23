@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,80 +6,89 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 30 10% 15%;
+    /* Paleta Xique-Xique: amarelo sol, vermelho sertão, verde mata, areia */
+    --background: 40 60% 97%;
+    --foreground: 20 25% 15%;
 
-    --card: 40 30% 98%;
-    --card-foreground: 30 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 25% 15%;
 
-    --popover: 40 30% 98%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 15%;
 
-    --primary: 55 30% 42%;
-    --primary-foreground: 40 33% 96%;
+    /* Verde-mata: confiança, viagem, natureza */
+    --primary: 145 55% 32%;
+    --primary-foreground: 50 100% 97%;
 
-    --secondary: 40 20% 80%;
-    --secondary-foreground: 30 10% 15%;
+    /* Amarelo-sol: alegria, calor, brasilidade */
+    --secondary: 42 96% 55%;
+    --secondary-foreground: 20 40% 15%;
 
-    --muted: 40 25% 91%;
-    --muted-foreground: 30 8% 45%;
+    --muted: 40 30% 93%;
+    --muted-foreground: 25 10% 40%;
 
-    --accent: 40 30% 88%;
-    --accent-foreground: 30 10% 20%;
+    /* Vermelho-sertão: ação, paixão, urgência */
+    --accent: 12 80% 52%;
+    --accent-foreground: 50 100% 97%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 85%;
-    --input: 40 20% 85%;
-    --ring: 55 30% 42%;
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 145 55% 32%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --earth-dark: 30 15% 22%;
-    --earth-olive: 55 30% 42%;
-    --earth-sand: 40 33% 96%;
-    --earth-cream: 40 35% 92%;
-    --earth-warm: 30 40% 60%;
+    /* Tokens Xique-Xique */
+    --sun-yellow: 42 96% 55%;
+    --sun-deep: 38 95% 48%;
+    --jungle-green: 145 55% 32%;
+    --jungle-deep: 150 60% 22%;
+    --sertao-red: 12 80% 52%;
+    --sertao-deep: 8 75% 42%;
+    --sand-light: 40 60% 97%;
+    --sand-warm: 35 55% 88%;
+    --night: 200 30% 12%;
 
-    --sidebar-background: 40 30% 97%;
-    --sidebar-foreground: 30 10% 25%;
-    --sidebar-primary: 55 30% 42%;
-    --sidebar-primary-foreground: 40 33% 96%;
-    --sidebar-accent: 40 30% 88%;
-    --sidebar-accent-foreground: 30 10% 20%;
-    --sidebar-border: 40 20% 85%;
-    --sidebar-ring: 55 30% 42%;
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    --gradient-sun: linear-gradient(135deg, hsl(var(--sun-yellow)), hsl(var(--sertao-red)));
+    --gradient-tropical: linear-gradient(135deg, hsl(var(--jungle-green)), hsl(var(--sun-yellow)));
+    --shadow-warm: 0 12px 32px -12px hsl(var(--sertao-red) / 0.35);
+    --shadow-card: 0 8px 24px -10px hsl(var(--night) / 0.18);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 20 25% 15%;
+    --sidebar-primary: 145 55% 32%;
+    --sidebar-primary-foreground: 50 100% 97%;
+    --sidebar-accent: 40 30% 93%;
+    --sidebar-accent-foreground: 20 25% 15%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 145 55% 32%;
   }
 
   .dark {
-    --background: 30 15% 8%;
-    --foreground: 40 20% 90%;
-
-    --card: 30 15% 12%;
-    --card-foreground: 40 20% 90%;
-
-    --popover: 30 15% 12%;
-    --popover-foreground: 40 20% 90%;
-
-    --primary: 55 35% 50%;
-    --primary-foreground: 30 15% 8%;
-
-    --secondary: 40 15% 25%;
-    --secondary-foreground: 40 20% 90%;
-
-    --muted: 30 12% 18%;
-    --muted-foreground: 40 10% 55%;
-
-    --accent: 40 15% 20%;
-    --accent-foreground: 55 35% 60%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 30 12% 22%;
-    --input: 30 12% 22%;
-    --ring: 55 35% 50%;
+    --background: 200 30% 10%;
+    --foreground: 40 30% 95%;
+    --card: 200 30% 14%;
+    --card-foreground: 40 30% 95%;
+    --popover: 200 30% 14%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 145 55% 45%;
+    --primary-foreground: 200 30% 10%;
+    --secondary: 42 96% 55%;
+    --secondary-foreground: 200 30% 10%;
+    --muted: 200 20% 20%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 12 80% 55%;
+    --accent-foreground: 50 100% 97%;
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 20% 22%;
+    --input: 200 20% 22%;
+    --ring: 145 55% 45%;
   }
 }
 
@@ -93,57 +102,36 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Bebas Neue', 'Poppins', sans-serif;
+    letter-spacing: 0.02em;
   }
 
-  .bg-earth-dark {
-    background-color: hsl(var(--earth-dark));
-  }
+  .bg-gradient-sun { background: var(--gradient-sun); }
+  .bg-gradient-tropical { background: var(--gradient-tropical); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-card { box-shadow: var(--shadow-card); }
 
-  .bg-earth-cream {
-    background-color: hsl(var(--earth-cream));
-  }
+  .text-balance { text-wrap: balance; }
 
-  .text-earth-olive {
-    color: hsl(var(--earth-olive));
-  }
-
-  .text-earth-warm {
-    color: hsl(var(--earth-warm));
-  }
-
-  .bg-earth-olive {
-    background-color: hsl(var(--earth-olive));
-  }
-
-  .border-earth-olive {
-    border-color: hsl(var(--earth-olive));
-  }
-
-  /* Stamp badge */
-  .stamp-badge {
-    width: 120px;
-    height: 120px;
-    border: 3px solid hsl(var(--earth-olive));
-    border-radius: 50%;
-    display: flex;
+  /* Selo "Sem cartão de crédito" rotativo */
+  .selo-carne {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: rotate(-15deg);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    line-height: 1.2;
-    color: hsl(var(--earth-olive));
-    padding: 0.5rem;
+    transform: rotate(-8deg);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.05;
+    border-radius: 9999px;
+    padding: 1rem;
   }
 }

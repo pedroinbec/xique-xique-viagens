@@ -1,73 +1,86 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Youtube } from "lucide-react";
-import { products } from "@/data/products";
+import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { SITE } from "@/config/site";
 
 const Footer = () => {
   return (
-    <footer className="bg-earth-dark text-primary-foreground/70">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* About */}
+    <footer className="bg-night text-white/80 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <span className="font-display text-xl font-bold text-primary-foreground italic block mb-4">
-              We Are Travellers
-            </span>
-            <p className="text-xs leading-relaxed text-primary-foreground/50">
-              At We Are Travellers, we share travel stories, practical tips, and inspiration for your next adventure. After years of exploring the world, we created this platform to help fellow travelers discover the beauty our planet has to offer.
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-sun grid place-items-center text-2xl">🌵</div>
+              <p className="font-display text-2xl text-white">Xique-Xique</p>
+            </div>
+            <p className="text-sm text-white/60 leading-relaxed">
+              Pacotes de viagem pelo Nordeste com pagamento parcelado no carnê.
+              Sem cartão, sem juros abusivos, com muito conforto.
             </p>
-            <div className="flex gap-3 mt-4">
-              {[Instagram, Facebook, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary/30 transition text-primary-foreground/50 hover:text-primary-foreground">
+            <div className="flex gap-3 mt-5">
+              {[
+                { Icon: Instagram, href: SITE.instagram, label: "Instagram" },
+                { Icon: Facebook, href: SITE.facebook, label: "Facebook" },
+                { Icon: Youtube, href: SITE.youtube, label: "YouTube" },
+              ].map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full bg-white/10 grid place-items-center hover:bg-secondary hover:text-night transition"
+                >
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4 text-sm">Contact & Connect</h4>
-            <p className="text-xs text-primary-foreground/50 mb-2">
-              Have a question or want to collaborate?
-            </p>
-            <p className="text-xs text-primary-foreground/50">
-              We Are Travellers is open for collaborations and sponsored content. Feel free to reach out!
-            </p>
-          </div>
-
-          {/* Latest tips */}
-          <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4 text-sm">Latest Tips</h4>
-            <ul className="space-y-2">
-              {["Accommodation tips", "Travel guides", "Attractions", "Road trips", "Food & Culture"].map((cat) => (
-                <li key={cat}>
-                  <Link to="/destinations" className="text-xs text-primary-foreground/40 hover:text-primary transition">
-                    {cat}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="font-display text-xl text-white mb-4">Navegue</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/#pacotes" className="hover:text-secondary transition">Próximas saídas</a></li>
+              <li><a href="/#como-funciona" className="hover:text-secondary transition">Como funciona</a></li>
+              <li><a href="/#depoimentos" className="hover:text-secondary transition">Depoimentos</a></li>
+              <li><a href="/#faq" className="hover:text-secondary transition">Dúvidas frequentes</a></li>
+              <li><Link to="/contato" className="hover:text-secondary transition">Fale conosco</Link></li>
             </ul>
           </div>
 
-          {/* Products */}
           <div>
-            <h4 className="font-display font-bold text-primary-foreground mb-4 text-sm">Our Travel Guides</h4>
-            <div className="space-y-2">
-              {products.map((product) => (
-                <Link key={product.id} to={`/shop/${product.id}`} className="flex items-center gap-3 bg-primary-foreground/5 rounded-md p-2 hover:bg-primary-foreground/10 transition">
-                  <img src={product.image} alt={product.name} className="w-10 h-10 rounded object-cover" loading="lazy" />
-                  <div>
-                    <p className="text-xs font-medium text-primary-foreground/80">{product.name}</p>
-                    <p className="text-[10px] text-primary">€{product.price.toFixed(2)}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <h4 className="font-display text-xl text-white mb-4">Contato</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5 text-secondary shrink-0" aria-hidden />
+                <span>{SITE.phone}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-0.5 text-secondary shrink-0" aria-hidden />
+                <span>{SITE.email}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 text-secondary shrink-0" aria-hidden />
+                <span>{SITE.address}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-xl text-white mb-4">A empresa</h4>
+            <p className="text-sm text-white/60 leading-relaxed">
+              {SITE.name}<br />
+              CNPJ: {SITE.cnpj}<br />
+              Cadastur ativo
+            </p>
+            <p className="text-xs text-white/40 mt-4">
+              Atendimento de segunda a sábado, das 8h às 18h.
+            </p>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center">
-          <p className="text-[10px] text-primary-foreground/30 tracking-wide">© 2025 We Are Travellers. All rights reserved.</p>
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/40">
+          <p>© {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.</p>
+          <p>Feito com ❤️ para quem sonha em viajar.</p>
         </div>
       </div>
     </footer>
