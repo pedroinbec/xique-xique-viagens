@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["'DM Sans'", "system-ui", "sans-serif"],
-        display: ["'Cormorant Garamond'", "serif"],
+        sans: ["Poppins", "system-ui", "sans-serif"],
+        display: ["'Bebas Neue'", "Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,12 +51,26 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        earth: {
-          dark: "hsl(var(--earth-dark))",
-          olive: "hsl(var(--earth-olive))",
-          sand: "hsl(var(--earth-sand))",
-          cream: "hsl(var(--earth-cream))",
-          warm: "hsl(var(--earth-warm))",
+        sun: {
+          DEFAULT: "hsl(var(--sun-yellow))",
+          deep: "hsl(var(--sun-deep))",
+        },
+        jungle: {
+          DEFAULT: "hsl(var(--jungle-green))",
+          deep: "hsl(var(--jungle-deep))",
+        },
+        sertao: {
+          DEFAULT: "hsl(var(--sertao-red))",
+          deep: "hsl(var(--sertao-deep))",
+        },
+        sand: {
+          DEFAULT: "hsl(var(--sand-light))",
+          warm: "hsl(var(--sand-warm))",
+        },
+        night: "hsl(var(--night))",
+        whatsapp: {
+          DEFAULT: "hsl(var(--whatsapp))",
+          foreground: "hsl(var(--whatsapp-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
